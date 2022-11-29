@@ -71,6 +71,9 @@ let files = [];
     console.log(`Mapping all source files from SRG to official Mojang mappings...`);
 
     await (Promise.all(files.map(async file => { // This *might* help with speeding up mapping.
+        if (!file.endsWith('.java') && !file.endsWith('.kt') && !file.endsWith('.groovy'))
+            return;
+            
         let data = (await fs.promises.readFile(file)).toString();
 
         console.log(`Mapping file ${file.replace(main, '')}`);
