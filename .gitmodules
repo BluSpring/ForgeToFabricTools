@@ -1,0 +1,3 @@
+[submodule "srg2intermediary"]
+	path = srg2intermediary
+	url = git@github.com:BluSpring/srg2intermediary.git
